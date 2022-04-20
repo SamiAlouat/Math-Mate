@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="language" content="NL">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MathMate is een website voor gebruikers om berekeningen uiterekenen">
+    <meta name="author" content="Sami alouat,Ryan van es,mohamed mohamud,nathan kawilarang">
+    <meta name="keywords" content="gebruikers,logica, studenten,docenten">
+    <link rel="stylesheet" href="css/game.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" type="image/png" href="logo.png"/>
+    <title>Math Mate - de wereldwijde favoriete rekenwebsite</title>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+  </head>
+  <body>
+      <style>
+        body {
+          position: absolute;
+          left:600px;
+          top:195px;
+          border: 2px solid #4D59FB;
+        }
+      </style>
+   <canvas id="canvas" width="288" height="512"></canvas>
+   <script src="js/game.js"></script>
+   
+
+   <nav class="sidebar close">
+    <header>
+        <div class="image-text">
+            <span class="image">
+                <img src="logo.png" alt="">
+            </span>
+            <div class="text logo-text">
+                 <span class="name">Math ~ Mate</span>
+                
+        </div>
+        <i class='bx bx-chevron-right toggle'></i>
+    </header>
+    <div class="menu-bar">
+        <div class="menu">
+            <li class="search-box">
+                <i class='bx bx-search icon'></i>
+                <input type="text" placeholder="Search...">
+            </li>
+            <ul class="menu-links">
+                <li class="nav-link">
+                    <a href="#">
+                        <i class='bx bx-home-alt icon' ></i>
+                        <span class="text nav-text">Naar begin</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="register.html">
+                        <i class='bx bx-log-in icon' ></i>
+                        <span class="text nav-text">Profiel</span>
+                    </a>
+                </li>
+                <li class="nav-link">
+                    <a href="pre.html">
+                        <i class='bx bx-slideshow icon' ></i>
+                        <span class="text nav-text">presentatie</span>
+                    </a>
+                </li>
+                <li class="nav-link">
+                    <a href="sommen.html">
+                        <i class='bx bx-math icon'></i>
+                        <span class="text nav-text">Basis</span>
+                    </a>
+                </li>
+                <li class="nav-link">
+                    <a href="sommen2.html">
+                        <i class='bx bx-calculator icon' ></i>
+                        <span class="text nav-text">Complexe</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="game.html">
+                        <i class='bx bx-game icon' ></i>
+                        <span class="text nav-text">game</span>
+                    </a>
+                </li>
+              
+
+                <li class="nav-link">
+                    <a href="about us.html">
+                        <i class='bx bx-info-circle icon' ></i>
+                        <span class="text nav-text">over ons</span>
+                    </a>
+                </li>
+                <li class="nav-link">
+                    <a href="contact.html">
+                        <i  class='bx bx-envelope icon' ></i>
+                        <span class="text nav-text">contact</span>
+                    </a>
+                </li>
+                <li class="nav-link">
+                    <a href="kaart.html">
+                        <i class='bx bx-map-pin icon' ></i>
+                        <span class="text nav-text">vind ons</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="bottom-content">
+            <li class="">
+                <a href="#">
+                    <i class='bx bx-log-out icon' ></i>
+                    <span class="text nav-text" id = "logout">Logout</span>
+                </a>
+            </li>
+            <li class="mode">
+                <div class="sun-moon">
+                    <i class='bx bx-moon icon moon'></i>
+                    <i class='bx bx-sun icon sun'></i>
+                </div>
+                <span class="mode-text text">Dark mode</span>
+
+                <div class="toggle-switch">
+                    <span class="switch"></span>
+                </div>
+            </li>
+            
+        </div>
+    </div>
+</nav>
+
+
+
+    <!--terug knop-->
+<button id="backe">
+    <svg height="16" width="16" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1024 1024"><path d="M874.690416 495.52477c0 11.2973-9.168824 20.466124-20.466124 20.466124l-604.773963 0 188.083679 188.083679c7.992021 7.992021 7.992021 20.947078 0 28.939099-4.001127 3.990894-9.240455 5.996574-14.46955 5.996574-5.239328 0-10.478655-1.995447-14.479783-5.996574l-223.00912-223.00912c-3.837398-3.837398-5.996574-9.046027-5.996574-14.46955 0-5.433756 2.159176-10.632151 5.996574-14.46955l223.019353-223.029586c7.992021-7.992021 20.957311-7.992021 28.949332 0 7.992021 8.002254 7.992021 20.957311 0 28.949332l-188.073446 188.073446 604.753497 0C865.521592 475.058646 874.690416 484.217237 874.690416 495.52477z"></path></svg>
+    <span>Back</span>
+  </button>
+  <script src="js/back.js"></script>
+  </body>
+</html>
